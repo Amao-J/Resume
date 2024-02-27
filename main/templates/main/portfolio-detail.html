@@ -1,0 +1,42 @@
+{%extends 'main/base.html'%}
+{%load static%}
+
+{%block title%} Portfolio -Home {%endblock%}
+{%block description%}{%endblock%}
+{%block keywords%}{%endblock%}
+
+
+    {%block extend_header%}{%endblock%}
+   
+
+    {% block content %}
+    <section>
+      <div class="innerPageBannerCol">
+        <div class="container">
+          <div class="row g-4 g-md-3  align-items-center">
+            <div class="col-md-6">
+              <div class="bannerContent">
+                <h1 class="xlTitle pb-md-3">Portfolio</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+
+     
+      <div class="sectionSpaceSm" style="margin-bottom: 0;">
+        <div class="container">
+
+        {{object.body|safe}}
+        </div>
+      </div>
+        
+    </section>
+    
+  {%endblock%}
+
+  </body>
+</html>

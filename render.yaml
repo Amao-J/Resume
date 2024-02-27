@@ -1,0 +1,22 @@
+databases:
+  - name: Djangox
+    plan: free
+    databaseName: djangox_ytab
+    user: djangox_ytab_user
+
+services:
+  - type: web
+    plan: free
+    name: mysite
+    runtime: python
+    buildCommand: './build.sh'
+    startCommand: 'python -m gunicorn resume_demo.asgi:application -k uvicorn.workers.UvicornWorker'
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: Djangox
+          property: connectionString
+      - key: UNUfxfGeri4ZzG457mKZZt0O4YlD2kd5
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
